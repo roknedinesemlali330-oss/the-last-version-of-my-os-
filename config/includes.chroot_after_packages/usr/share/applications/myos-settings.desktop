@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+Comment=MyOS settings
+Exec=qs -p /etc/myos/settings
+Icon=preferences-system
+Categories=Settings;

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Install MyOS
+Comment=Install MyOS to a disk (experimental)
+Exec=sh /etc/myos/install.sh
+Icon=system-software-install
+Categories=System;

@@ -1,0 +1,16 @@
+#!/bin/sh
+# هذا الملف يشرح لأداة live-build كيف تبني نظامنا.
+# يشبه قسم "scripts" و"engines" في package.json.
+
+lb config noauto \
+  --distribution trixie \
+  --architectures amd64 \
+  --archive-areas "main contrib non-free-firmware" \
+  --binary-images iso-hybrid \
+  --debian-installer none \
+  --apt-options "--yes -t trixie-backports" \
+  --image-name myos \
+  --iso-application "MyOS" \
+  --iso-volume "MyOS" \
+  --bootappend-live "boot=live components quiet locales=en_US.UTF-8 keyboard-layouts=us,ara" \
+  "${@}"

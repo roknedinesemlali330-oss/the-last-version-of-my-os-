@@ -1,0 +1,13 @@
+# Hyprland from backports needs newer libraries from backports too.
+# Keep the kernel from the stable repository.
+Package: calamares calamares-settings-debian
+Pin: release a=trixie-backports
+Pin-Priority: 100
+
+Package: linux-image-* linux-headers-* linux-kbuild-* linux-libc-dev
+Pin: release a=trixie-backports
+Pin-Priority: 100
+
+Package: *
+Pin: release a=trixie-backports
+Pin-Priority: 600

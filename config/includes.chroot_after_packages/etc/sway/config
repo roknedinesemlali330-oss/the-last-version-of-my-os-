@@ -1,0 +1,46 @@
+# sway draws windows only; Quickshell draws the shelf and launcher.
+set $mod Mod4
+
+font pango:Noto Sans 10
+output * bg /usr/share/backgrounds/myos/wallpaper.png fill
+
+# Window look
+gaps inner 6
+gaps outer 4
+default_border pixel 2
+default_floating_border normal 2
+titlebar_padding 8 4
+client.focused          #4C7BDE #4C7BDE #FFFFFF #4C7BDE #4C7BDE
+client.unfocused        #C9D3EA #E3E9F6 #556080 #C9D3EA #C9D3EA
+client.focused_inactive #C9D3EA #E3E9F6 #556080 #C9D3EA #C9D3EA
+
+# Open every window floating and centered, like a classic desktop
+for_window [app_id=".*"] floating enable, move position center
+for_window [class=".*"] floating enable, move position center
+
+# Keyboard: English and Arabic, switch with Alt+Shift
+input type:keyboard {
+    xkb_layout "us,ara"
+    xkb_options "grp:alt_shift_toggle"
+}
+
+# Mouse
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
+seat seat0 xcursor_theme Adwaita 24
+
+# Shortcuts
+bindsym $mod+Return exec foot
+bindsym $mod+e exec thunar
+bindsym $mod+b exec firefox-esr
+bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+e exec swaymsg exit
+bindsym Print exec grim
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+floating_modifier $mod
+
+# Start our shell (shelf and launcher)
+exec sh /etc/myos/start-shell.sh

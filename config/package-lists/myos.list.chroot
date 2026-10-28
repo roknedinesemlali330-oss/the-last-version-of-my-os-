@@ -1,0 +1,92 @@
+# ===== Desktop core =====
+sway
+foot
+xwayland
+qt6-wayland
+qml6-module-qtquick
+qml6-module-qtquick-controls
+qml6-module-qtquick-layouts
+qml6-module-qtquick-templates
+qml6-module-qtquick-window
+qml6-module-qtqml-workerscript
+quickshell
+
+# ===== Hyprland (from backports): rounded corners and animations =====
+hyprland
+swaybg
+
+# ===== Keyboard and languages =====
+xkb-data
+keyboard-configuration
+
+# ===== Look: icons, cursors, fonts =====
+papirus-icon-theme
+adwaita-icon-theme
+fonts-noto-core
+fonts-noto-ui-core
+fonts-noto-color-emoji
+fonts-liberation
+fonts-dejavu-core
+
+# ===== Batch 1: everyday applications =====
+thunar
+thunar-archive-plugin
+gvfs
+tumbler
+file-roller
+mousepad
+galculator
+ristretto
+evince
+mpv
+lxtask
+firefox-esr
+grim
+slurp
+wl-clipboard
+xdg-utils
+
+# ===== Network and graphics drivers =====
+network-manager
+mesa-vulkan-drivers
+
+# ===== Memory =====
+zram-tools
+
+# ===== Sound and brightness (used by Quick Settings and Settings) =====
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+brightnessctl
+
+# ===== Batch 2: hardware =====
+bluez
+rfkill
+cups
+system-config-printer
+firmware-linux
+firmware-iwlwifi
+firmware-realtek
+firmware-atheros
+firmware-misc-nonfree
+firmware-amd-graphics
+firmware-brcm80211
+intel-microcode
+amd64-microcode
+xdg-desktop-portal-gtk
+xdg-desktop-portal-hyprland
+
+# ===== Batch 3: languages =====
+locales-all
+
+# ===== Batch 4: installer and software store =====
+calamares
+calamares-settings-debian
+grub-efi-amd64
+grub-pc-bin
+efibootmgr
+os-prober
+flatpak
+gnome-software
+gnome-software-plugin-flatpak

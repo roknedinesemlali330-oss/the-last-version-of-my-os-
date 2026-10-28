@@ -1,0 +1,4 @@
+#!/bin/sh
+# Add the Flathub store to Flatpak. Ignore errors so the build never fails here.
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || true
+exit 0
