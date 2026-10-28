@@ -1,0 +1,37 @@
+name: build-iso
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:trixie
+      options: --privileged
+    steps:
+      - name: Install tools
+        run: |
+          apt-get update
+          apt-get install -y git ca-certificates live-build debootstrap xorriso squashfs-tools
+
+      - uses: actions/checkout@v4
+
+      - name: Build system
+        run: |
+          chmod +x auto/*
+          lb clean --purge || true
+          lb config
+          lb build
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: MyOS build ${{ github.run_number }}
+          files: "*.iso"
